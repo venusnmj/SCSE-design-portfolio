@@ -1,0 +1,698 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Design Portfolio</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(0, 0, 0, 0.06); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="11fbf527-1e74-801f-9401-d5086451fb0f" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">🎨</span></div><h1 class="page-title">Design Portfolio</h1><p class="page-description"></p></header><div class="page-body"><nav id="11fbf527-1e74-80b8-8bbb-ebbd859f397b" class="block-color-blue table_of_contents"><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#11fbf527-1e74-80fe-9833-d4a6610913fa">AGM 2023</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#11fbf527-1e74-80bb-bce7-c9ba5d4b4645">Drafts</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#11fbf527-1e74-8095-8925-cdd72aa869bf">Intra-school games</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#11fbf527-1e74-8005-a8d9-f3ce97df0b6e">Drafts</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#11fbf527-1e74-80ab-a6f6-fc21681444d6">Inter School Games</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#11fbf527-1e74-80b1-9f71-e0555dd59fa8">Drafts</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#11fbf527-1e74-8053-ab80-c77843d8a122">After ISG</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#11fbf527-1e74-8070-ba9e-db01937aed94">Techfest logo designs</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#11fbf527-1e74-807e-82e5-d2516f616c8f">Techfest non-merch shirt</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#11fbf527-1e74-80dc-bbb1-e9ea7257b119">Techfest lanyard drafts</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#11fbf527-1e74-809a-9a02-f8db79ec1389">Techfest ig banner</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#11fbf527-1e74-8049-a8fb-d8cc4baed54e">Techfest ig story and a4 poster</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#11fbf527-1e74-800a-9d96-ffd34f88478d">Techfest backdrop</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#11fbf527-1e74-8044-ab96-c86d778b3982">Techfest event posts</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#11fbf527-1e74-8005-b1a4-d22d36aacff1">Varsity jacket drafts</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#11fbf527-1e74-809b-875e-f69f225a2d20">Member’s week</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#11fbf527-1e74-800f-a3d3-c9d0f7f84610">Recruitment poster</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#11fbf527-1e74-8070-bc44-e5ee6ded5f96">Merch sale</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#11fbf527-1e74-8031-92c3-ff86882b323e">AGM 2024</a></div></nav><h2 id="11fbf527-1e74-80fe-9833-d4a6610913fa" class="">AGM 2023</h2><figure id="11fbf527-1e74-80f3-ac42-cefa9bf70b8e" class="image"><a href="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/AGM23_IG_post_4.png"><img style="width:12960px" src="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/AGM23_IG_post_4.png"/></a></figure><div id="11fbf527-1e74-80a9-a6e1-e508c99d71a3" class="column-list"><div id="6306af14-4859-4e99-bc13-86ca791cf839" style="width:33.33333333333333%" class="column"><figure id="11fbf527-1e74-806f-974f-f1440ea9b64d" class="image"><a href="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/AGM23_IG_post_1.png"><img style="width:4320px" src="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/AGM23_IG_post_1.png"/></a></figure></div><div id="0b7a3cc8-574e-4bd2-8b49-02e2d8cfd131" style="width:33.33333333333333%" class="column"><figure id="11fbf527-1e74-80ea-9ff9-dfeb022dec59" class="image"><a href="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/AGM23_IG_post_2.png"><img style="width:4320px" src="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/AGM23_IG_post_2.png"/></a></figure><p id="0bdc5318-3e2c-4a7f-9c38-10a9a74fa2ff" class="">
+</p></div><div id="d044871d-fc5a-43f0-b4d4-086f547c7ffc" style="width:33.33333333333333%" class="column"><figure id="11fbf527-1e74-80ae-889b-e869af265f68" class="image"><a href="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/AGM23_IG_post_3.png"><img style="width:205.328125px" src="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/AGM23_IG_post_3.png"/></a></figure></div></div><p id="11fbf527-1e74-80e8-ad65-fa9cf5c309a1" class="">
+</p><div id="11fbf527-1e74-80cd-a3c9-cc624337ddd7" class="column-list"><div id="11fbf527-1e74-8078-847c-c456596d1b93" style="width:50%" class="column"><figure id="11fbf527-1e74-80de-a426-c00f6c016b35" class="image"><a href="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/Instagram_story_-_AGM.png"><img style="width:4320px" src="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/Instagram_story_-_AGM.png"/></a></figure></div><div id="11fbf527-1e74-8039-8666-f383701fa7d5" style="width:50%" class="column"><figure id="11fbf527-1e74-8025-8412-f94f648d4e26" class="image"><a href="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/AGM_MC_cert_1.png"><img style="width:330.9921875px" src="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/AGM_MC_cert_1.png"/></a></figure><figure id="11fbf527-1e74-800d-a50a-c8cd25380572" class="image"><a href="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/AGM_SC_cert_1.png"><img style="width:330.9921875px" src="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/AGM_SC_cert_1.png"/></a></figure></div></div><h3 id="11fbf527-1e74-80bb-bce7-c9ba5d4b4645" class="">Drafts</h3><div id="11fbf527-1e74-8074-8d24-c5b8037f4768" class="column-list"><div id="11fbf527-1e74-80da-86bf-ee862bb64715" style="width:50%" class="column"><figure id="11fbf527-1e74-80d3-9e21-f4cdf3130cc7" class="image"><a href="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/AGM_MC_cert_2.png"><img style="width:330.9921875px" src="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/AGM_MC_cert_2.png"/></a></figure></div><div id="11fbf527-1e74-8008-b3ac-e0c7d82d8011" style="width:50%" class="column"><figure id="11fbf527-1e74-80e9-843a-e77756d0a8ac" class="image"><a href="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/AGM_SC_cert_2.png"><img style="width:330.9921875px" src="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/AGM_SC_cert_2.png"/></a></figure></div></div><h2 id="11fbf527-1e74-8095-8925-cdd72aa869bf" class="">Intra-school games</h2><figure id="11fbf527-1e74-806d-b458-c4f6e473e473" class="image"><a href="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/Blast_Intra-school_poster.png"><img style="width:4320px" src="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/Blast_Intra-school_poster.png"/></a></figure><h3 id="11fbf527-1e74-8005-a8d9-f3ce97df0b6e" class="">Drafts</h3><div id="11fbf527-1e74-807b-9a22-cd50f67af2b2" class="column-list"><div id="11fbf527-1e74-807a-834a-cba33c8f0a61" style="width:33.333333333333336%" class="column"><figure id="11fbf527-1e74-8084-9e46-e60dd7d9ad78" class="image"><a href="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/Intra-poster-vertstripesx.png"><img style="width:4320px" src="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/Intra-poster-vertstripesx.png"/></a></figure></div><div id="11fbf527-1e74-809a-9907-e091a20693ea" style="width:33.333333333333336%" class="column"><figure id="11fbf527-1e74-80fb-9aeb-f5cb945a5f1b" class="image"><a href="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/Intra-school_badmintoncourt.png"><img style="width:330.9921875px" src="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/Intra-school_badmintoncourt.png"/></a></figure></div><div id="11fbf527-1e74-80d4-955e-e926423123e9" style="width:33.33333333333333%" class="column"><figure id="11fbf527-1e74-8033-9f05-d4e8410a8d3d" class="image"><a href="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/Intra-school_basketballcourt.png"><img style="width:205.3203125px" src="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/Intra-school_basketballcourt.png"/></a></figure></div></div><p id="11fbf527-1e74-8080-afab-d624048ff991" class="">
+</p><h2 id="11fbf527-1e74-80ab-a6f6-fc21681444d6" class="">Inter School Games</h2><figure id="11fbf527-1e74-8005-8fae-da81c987e444" class="image"><a href="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/isg-igstory.png"><img style="width:4320px" src="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/isg-igstory.png"/></a></figure><h3 id="11fbf527-1e74-80b1-9f71-e0555dd59fa8" class="">Drafts</h3><div id="11fbf527-1e74-8018-8d0d-cd0321bacf8a" class="column-list"><div id="11fbf527-1e74-8070-a2e7-d9715293fbef" style="width:33.333333333333336%" class="column"><figure id="11fbf527-1e74-8011-b8f0-cabccb135a85" class="image"><a href="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/ISG_draft_(1).png"><img style="width:4320px" src="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/ISG_draft_(1).png"/></a></figure></div><div id="11fbf527-1e74-8093-8fb0-fec2fe7cf104" style="width:33.333333333333336%" class="column"><figure id="11fbf527-1e74-8007-ae31-d9616b571741" class="image"><a href="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/ISG_draft_(2).png"><img style="width:330.9921875px" src="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/ISG_draft_(2).png"/></a></figure></div><div id="11fbf527-1e74-809d-a3c7-f0a4e8639fb5" style="width:33.33333333333333%" class="column"><figure id="11fbf527-1e74-8040-b8dd-eec62f3076d8" class="image"><a href="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/ISG_draft_(3).png"><img style="width:4320px" src="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/ISG_draft_(3).png"/></a></figure></div></div><h3 id="11fbf527-1e74-8053-ab80-c77843d8a122" class="">After ISG</h3><div id="11fbf527-1e74-8005-b9c9-c0f8d22076a9" class="column-list"><div id="11fbf527-1e74-8038-bd73-ec8e4e1227a4" style="width:25%" class="column"><figure id="11fbf527-1e74-8022-8ed2-db673c98c126" class="image"><a href="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/Instagram_post_-_inter_ep1.png"><img style="width:4320px" src="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/Instagram_post_-_inter_ep1.png"/></a></figure></div><div id="11fbf527-1e74-805a-ad35-c46b8383d582" style="width:25%" class="column"><figure id="11fbf527-1e74-80dd-a756-d1eae5ab4ee3" class="image"><a href="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/Instagram_post_-_inter_ep_2.jpg"><img style="width:329.328125px" src="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/Instagram_post_-_inter_ep_2.jpg"/></a></figure></div><div id="11fbf527-1e74-8048-8615-d906a05f8e7c" style="width:25%" class="column"><figure id="11fbf527-1e74-80dc-8aef-cd79cd4df763" class="image"><a href="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/Instagram_post_-_inter_ep_3.jpg"><img style="width:4320px" src="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/Instagram_post_-_inter_ep_3.jpg"/></a></figure></div><div id="11fbf527-1e74-80ae-8ca3-ec35d6fd5a7e" style="width:25%" class="column"><figure id="11fbf527-1e74-8066-aa7b-d1882a6ba0c5" class="image"><a href="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/Instagram_post_-_inter_ep_4.jpg"><img style="width:4320px" src="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/Instagram_post_-_inter_ep_4.jpg"/></a></figure></div></div><p id="11fbf527-1e74-8082-8b3f-cc5f39a114f2" class="">
+</p><h2 id="11fbf527-1e74-8070-ba9e-db01937aed94" class="">Techfest logo designs</h2><figure id="11fbf527-1e74-8059-b922-c627b0bba000" class="image"><a href="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/Screenshot_2024-01-13_at_6.05.51_PM.png"><img style="width:707.9921875px" src="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/Screenshot_2024-01-13_at_6.05.51_PM.png"/></a></figure><h2 id="11fbf527-1e74-807e-82e5-d2516f616c8f" class="">Techfest non-merch shirt</h2><figure id="11fbf527-1e74-803c-b27a-f5835f77223d" class="image"><a href="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/techfest_tshirt_blue.png"><img style="width:8368px" src="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/techfest_tshirt_blue.png"/></a></figure><h2 id="11fbf527-1e74-80dc-bbb1-e9ea7257b119" class="">Techfest lanyard drafts</h2><div id="11fbf527-1e74-809f-a633-cd418383e983" class="column-list"><div id="11fbf527-1e74-801c-bf7d-c273594c81c8" style="width:50%" class="column"><figure id="11fbf527-1e74-806e-8fd6-ecfd2ec619c7" class="image"><a href="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/landyard-label_lineargrad_blue.png"><img style="width:330.9921875px" src="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/landyard-label_lineargrad_blue.png"/></a></figure></div><div id="11fbf527-1e74-8031-b4a0-db7cce74cf57" style="width:50%" class="column"><figure id="11fbf527-1e74-8026-98ae-fd188027422d" class="image"><a href="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/landyard-label_lineargrad_pink.png"><img style="width:330.9921875px" src="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/landyard-label_lineargrad_pink.png"/></a></figure></div></div><div id="11fbf527-1e74-803f-8466-d735a8bed00b" class="column-list"><div id="11fbf527-1e74-80c5-ac20-cc95ecb12a1c" style="width:50%" class="column"><figure id="11fbf527-1e74-8089-a2f9-f91df085428f" class="image"><a href="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/landyard-label_roundgrad_blue.png"><img style="width:330.9921875px" src="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/landyard-label_roundgrad_blue.png"/></a></figure></div><div id="11fbf527-1e74-8007-a6db-f1ee95013e33" style="width:50%" class="column"><figure id="11fbf527-1e74-8077-8265-dd61c82a295c" class="image"><a href="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/landyard-label_roundgrad_pink.png"><img style="width:330.9921875px" src="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/landyard-label_roundgrad_pink.png"/></a></figure></div></div><div id="11fbf527-1e74-80c0-8949-f8df06fc2144" class="column-list"><div id="11fbf527-1e74-8093-aea7-d0aa585f9cb8" style="width:50%" class="column"><figure id="11fbf527-1e74-8004-b938-f2c94b75a466" class="image"><a href="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/landyard-label_solid_blue.png"><img style="width:707.9921875px" src="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/landyard-label_solid_blue.png"/></a></figure></div><div id="11fbf527-1e74-8056-a0a6-ff9237882802" style="width:50%" class="column"><figure id="11fbf527-1e74-803c-849f-ed98d4ab2e7c" class="image"><a href="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/landyard-label_solid_pink.png"><img style="width:707.9921875px" src="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/landyard-label_solid_pink.png"/></a></figure></div></div><div id="11fbf527-1e74-80dd-b778-cfc36f047b9d" class="column-list"><div id="11fbf527-1e74-8052-bfa5-fdf29acaa281" style="width:50%" class="column"><figure id="11fbf527-1e74-8081-90f9-c46b1dcd4b74" class="image"><a href="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/landyard-pattern_solid_blue.png"><img style="width:2880px" src="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/landyard-pattern_solid_blue.png"/></a></figure></div><div id="11fbf527-1e74-8002-91c5-c77f6d2b9309" style="width:50%" class="column"><figure id="11fbf527-1e74-80a0-8803-eb776e6008b6" class="image"><a href="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/landyard-pattern_solid_pink.png"><img style="width:2880px" src="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/landyard-pattern_solid_pink.png"/></a></figure></div></div><p id="11fbf527-1e74-807c-ae0e-f6a4952e6e4b" class="">
+</p><h2 id="11fbf527-1e74-809a-9a02-f8db79ec1389" class="">Techfest ig banner</h2><div id="11fbf527-1e74-80e1-9641-e45f7a4d2976" class="column-list"><div id="11fbf527-1e74-800c-a132-d8b5ab84943b" style="width:33.333333333333336%" class="column"><figure id="11fbf527-1e74-801f-9851-dcb1ef743193" class="image"><a href="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/Techfest_ig_banner_42.png"><img style="width:4320px" src="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/Techfest_ig_banner_42.png"/></a></figure></div><div id="11fbf527-1e74-805a-ba80-cb0c360a7db9" style="width:33.333333333333336%" class="column"><figure id="11fbf527-1e74-80f4-ab11-c373316d7747" class="image"><a href="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/Techfest_ig_banner_43.png"><img style="width:205.328125px" src="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/Techfest_ig_banner_43.png"/></a></figure></div><div id="11fbf527-1e74-80b4-bec1-da242f0144e5" style="width:33.33333333333333%" class="column"><figure id="11fbf527-1e74-80f0-b434-ead272e7cea6" class="image"><a href="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/Techfest_ig_banner_44.png"><img style="width:205.328125px" src="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/Techfest_ig_banner_44.png"/></a></figure></div></div><p id="11fbf527-1e74-80ce-8692-dc46760a479b" class="">
+</p><h2 id="11fbf527-1e74-8049-a8fb-d8cc4baed54e" class="">Techfest ig story and a4 poster</h2><div id="11fbf527-1e74-808c-bf05-cd95decde8f7" class="column-list"><div id="11fbf527-1e74-809f-bb7f-dc062c0ff11e" style="width:50%" class="column"><figure id="11fbf527-1e74-806a-af8e-d34a5ce30e48" class="image"><a href="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/techfest_reg_with_words.jpg"><img style="width:4320px" src="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/techfest_reg_with_words.jpg"/></a></figure></div><div id="11fbf527-1e74-80d2-bc7d-f28e1c4177d5" style="width:50%" class="column"><figure id="11fbf527-1e74-8060-9c92-f170192deb3f" class="image"><a href="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/A4_techfest_poster.jpg"><img style="width:330.9921875px" src="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/A4_techfest_poster.jpg"/></a></figure><p id="11fbf527-1e74-807a-aa36-c83525923aff" class="">
+</p></div></div><h2 id="11fbf527-1e74-800a-9d96-ffd34f88478d" class="">Techfest backdrop</h2><figure id="11fbf527-1e74-80ad-b322-d74af7307e4a" class="image"><a href="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/techfestbackdrop-resize.jpg"><img style="width:707.9765625px" src="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/techfestbackdrop-resize.jpg"/></a></figure><p id="11fbf527-1e74-80a7-9d9a-e2e85a8f3310" class="">
+</p><h2 id="11fbf527-1e74-8044-ab96-c86d778b3982" class="">Techfest event posts</h2><div id="11fbf527-1e74-8088-97e7-f49f8ea3ce9c" class="column-list"><div id="11fbf527-1e74-8068-a6c9-cee0b16d56e7" style="width:33.333333333333336%" class="column"><figure id="11fbf527-1e74-806b-8899-ec2ee88ad355" class="image"><a href="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/day_1(1)_-_tf_ig.png"><img style="width:1080px" src="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/day_1(1)_-_tf_ig.png"/></a></figure><figure id="11fbf527-1e74-807c-96b9-cbcefc7c445c" class="image"><a href="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/day_2(1)_-_tf_ig.png"><img style="width:1080px" src="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/day_2(1)_-_tf_ig.png"/></a></figure><figure id="11fbf527-1e74-80c6-8c32-cb13b059f29b" class="image"><a href="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/day_3(1)_-_tf_ig.png"><img style="width:1080px" src="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/day_3(1)_-_tf_ig.png"/></a></figure><figure id="11fbf527-1e74-80ba-bbc9-e6e088d4b753" class="image"><a href="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/finalist(1)_-_tf_ig.png"><img style="width:1080px" src="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/finalist(1)_-_tf_ig.png"/></a></figure><p id="11fbf527-1e74-8083-b29b-d322444f4a4f" class="">
+</p></div><div id="11fbf527-1e74-8006-becf-f003416044d2" style="width:33.333333333333336%" class="column"><figure id="11fbf527-1e74-801c-8c4d-d457c739436c" class="image"><a href="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/day_1(2)_-_tf_ig.png"><img style="width:1080px" src="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/day_1(2)_-_tf_ig.png"/></a></figure><figure id="11fbf527-1e74-8097-95f0-dbbd931f2e33" class="image"><a href="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/day_2(2)_-_tf_ig.png"><img style="width:708px" src="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/day_2(2)_-_tf_ig.png"/></a></figure><figure id="11fbf527-1e74-8057-baf2-cf46fcd0ea63" class="image"><a href="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/day_3(2)_-_tf_ig.png"><img style="width:1080px" src="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/day_3(2)_-_tf_ig.png"/></a></figure><figure id="11fbf527-1e74-8009-95b6-c105b0771531" class="image"><a href="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/finalist(2)_-_tf_ig.png"><img style="width:1080px" src="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/finalist(2)_-_tf_ig.png"/></a></figure></div><div id="11fbf527-1e74-801e-aa7e-c4ea6e972319" style="width:33.33333333333333%" class="column"><figure id="11fbf527-1e74-8010-bf2e-cccc83ad6c8d" class="image"><a href="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/day_1(3)__-_tf_ig.png"><img style="width:1080px" src="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/day_1(3)__-_tf_ig.png"/></a></figure></div></div><p id="11fbf527-1e74-80d9-b1a9-d9231416a4ff" class="">
+</p><div id="11fbf527-1e74-803c-b49d-f8b347d6a745" class="column-list"><div id="11fbf527-1e74-8011-9769-d1af9f0266c9" style="width:25%" class="column"><figure id="11fbf527-1e74-807c-926e-f9236d0e83f7" class="image"><a href="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/top3_(1)_-_tf_ig.png"><img style="width:1080px" src="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/top3_(1)_-_tf_ig.png"/></a></figure></div><div id="11fbf527-1e74-8042-8377-ef4b9e79694c" style="width:25%" class="column"><figure id="11fbf527-1e74-800e-8ada-d8c6c49bae03" class="image"><a href="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/top3_(2)_-_tf_ig.png"><img style="width:1080px" src="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/top3_(2)_-_tf_ig.png"/></a></figure></div><div id="11fbf527-1e74-80df-832a-d80a37635489" style="width:25%" class="column"><figure id="11fbf527-1e74-80c3-bb72-fe196706b982" class="image"><a href="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/top3_(4)_-_tf_ig.png"><img style="width:1080px" src="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/top3_(4)_-_tf_ig.png"/></a></figure></div><div id="11fbf527-1e74-80c8-80b8-c0f8fdf9ea20" style="width:25%" class="column"><figure id="11fbf527-1e74-808c-9c78-e25027a5d2e1" class="image"><a href="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/top3_(4)_-_tf_ig%201.png"><img style="width:1080px" src="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/top3_(4)_-_tf_ig%201.png"/></a></figure></div></div><h2 id="11fbf527-1e74-8005-b1a4-d22d36aacff1" class="">Varsity jacket drafts</h2><p id="11fbf527-1e74-8057-a365-e0d627ed48e6" class="">
+</p><div id="11fbf527-1e74-8024-b2bd-e237ec38e220" class="column-list"><div id="11fbf527-1e74-80da-8d08-e51ac202be6d" style="width:33.333333333333336%" class="column"><figure id="11fbf527-1e74-809e-8d4f-e995aea8c8ea" class="image"><a href="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/varsity-1.png"><img style="width:4588px" src="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/varsity-1.png"/></a></figure></div><div id="11fbf527-1e74-8095-8ae6-ce50906c7ab8" style="width:33.333333333333336%" class="column"><figure id="11fbf527-1e74-809b-abba-cdaab6b2f4b9" class="image"><a href="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/varsity-2.png"><img style="width:4588px" src="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/varsity-2.png"/></a></figure></div><div id="11fbf527-1e74-805f-858a-c4a100312290" style="width:33.33333333333333%" class="column"><figure id="11fbf527-1e74-8045-942a-d5645f3a0fc0" class="image"><a href="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/varsity-3.png"><img style="width:4588px" src="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/varsity-3.png"/></a></figure></div></div><h2 id="11fbf527-1e74-809b-875e-f69f225a2d20" class="">Member’s week</h2><div id="11fbf527-1e74-809f-8789-c56df6eece4d" class="column-list"><div id="11fbf527-1e74-8079-81a8-e68e62e54ced" style="width:33.333333333333336%" class="column"><figure id="11fbf527-1e74-8076-98ab-fbd64c47cd9c" class="image"><a href="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/members_week_-_1.png"><img style="width:4320px" src="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/members_week_-_1.png"/></a></figure><p id="11fbf527-1e74-8090-b42e-ed5ea96e06de" class="">
+</p></div><div id="11fbf527-1e74-80e6-a511-fce62a435078" style="width:33.333333333333336%" class="column"><figure id="11fbf527-1e74-8099-95d7-dc5abfa6e131" class="image"><a href="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/members_week_-_2.png"><img style="width:4320px" src="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/members_week_-_2.png"/></a></figure><figure id="11fbf527-1e74-8096-ab97-dbd75b75b3ec" class="image"><a href="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/members_week_sticker.png"><img style="width:3720px" src="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/members_week_sticker.png"/></a></figure><p id="11fbf527-1e74-8058-90b5-cbb7189b1323" class="">
+</p></div><div id="11fbf527-1e74-801d-b0c2-e3c9a36fc707" style="width:33.33333333333333%" class="column"><figure id="11fbf527-1e74-8085-bd6f-f5fef29d9f82" class="image"><a href="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/memberday_story.png"><img style="width:329.3203125px" src="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/memberday_story.png"/></a></figure></div></div><h2 id="11fbf527-1e74-800f-a3d3-c9d0f7f84610" class="">Recruitment poster</h2><div id="11fbf527-1e74-80cc-b98b-ced9fd0721ad" class="column-list"><div id="11fbf527-1e74-8046-a237-d048fdb2a22d" style="width:50%" class="column"><figure id="11fbf527-1e74-8047-82fc-c14805992238" class="image"><a href="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/recruitment_poster.png"><img style="width:516.9921875px" src="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/recruitment_poster.png"/></a></figure></div><div id="11fbf527-1e74-808d-a744-ebaf7df49183" style="width:50.000000000000014%" class="column"><figure id="11fbf527-1e74-809a-bab3-e45b22f2091d" class="image"><a href="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/recruitment_poster.jpg"><img style="width:516.9921875px" src="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/recruitment_poster.jpg"/></a></figure></div></div><h2 id="11fbf527-1e74-8070-bc44-e5ee6ded5f96" class="">Merch sale</h2><div id="11fbf527-1e74-8028-8d12-e2a85aba9f95" class="column-list"><div id="11fbf527-1e74-80e3-a23c-e317baab57fb" style="width:33.333333333333336%" class="column"><figure id="11fbf527-1e74-8057-908f-d188f6c863b5" class="image"><a href="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/merchsale_post_1-2.jpg"><img style="width:4320px" src="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/merchsale_post_1-2.jpg"/></a></figure><figure id="11fbf527-1e74-809a-84cf-ea7d35575a9c" class="image"><a href="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/merch_sale_poster.jpg"><img style="width:4320px" src="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/merch_sale_poster.jpg"/></a></figure></div><div id="11fbf527-1e74-800e-a2b0-c9e3d1a7ebfc" style="width:33.333333333333336%" class="column"><figure id="11fbf527-1e74-8023-b7b8-fecb1601f782" class="image"><a href="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/merchsale_post_1-3.jpg"><img style="width:329.328125px" src="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/merchsale_post_1-3.jpg"/></a></figure><figure id="11fbf527-1e74-808f-949c-f7ccfdaa3d25" class="image"><a href="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/merchsale_post_2.jpg"><img style="width:329.328125px" src="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/merchsale_post_2.jpg"/></a></figure></div><div id="11fbf527-1e74-80c9-a2f9-dad08f21106a" style="width:33.33333333333333%" class="column"><figure id="11fbf527-1e74-8082-ba85-dd2c3d18de18" class="image"><a href="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/merchsale_post_1-4.jpg"><img style="width:329.328125px" src="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/merchsale_post_1-4.jpg"/></a></figure><figure id="11fbf527-1e74-80ff-8231-cbd61eed4928" class="image"><a href="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/merchsale_post_1.jpg"><img style="width:329.328125px" src="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/merchsale_post_1.jpg"/></a></figure></div></div><h2 id="11fbf527-1e74-8031-92c3-ff86882b323e" class="">AGM 2024</h2><figure id="11fbf527-1e74-80fb-bb98-e7ce1b6d298b" class="image"><a href="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/agm_2024.png"><img style="width:1080px" src="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/agm_2024.png"/></a></figure><div id="11fbf527-1e74-80d2-976e-f3cc16106daf" class="column-list"><div id="11fbf527-1e74-80da-9874-fa9e2237ef00" style="width:33.333333333333336%" class="column"><figure id="11fbf527-1e74-80c1-9b43-e1992c510b3f" class="image"><a href="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/agm24_post1.png"><img style="width:4320px" src="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/agm24_post1.png"/></a></figure></div><div id="11fbf527-1e74-80fb-b616-cb69594d4d76" style="width:33.333333333333336%" class="column"><figure id="11fbf527-1e74-80a0-a6d7-eb4aa818722c" class="image"><a href="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/agm24_post2.png"><img style="width:4320px" src="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/agm24_post2.png"/></a></figure></div><div id="11fbf527-1e74-8091-9048-eaa659490bbc" style="width:33.33333333333333%" class="column"><figure id="11fbf527-1e74-809b-9108-cfa1ed35c9f2" class="image"><a href="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/agm24_post3.png"><img style="width:329.328125px" src="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/agm24_post3.png"/></a></figure></div></div><p id="11fbf527-1e74-8013-b078-fa6f0a934072" class="">
+</p><div id="11fbf527-1e74-803c-a677-d2fffd3a814f" class="column-list"><div id="11fbf527-1e74-8013-b370-ee94d4148731" style="width:50%" class="column"><figure id="11fbf527-1e74-8048-b883-e2cdd17c3193" class="image"><a href="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/agm_24_igstory.png"><img style="width:4320px" src="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/agm_24_igstory.png"/></a></figure></div><div id="11fbf527-1e74-803d-8355-ee2fd1c6b60c" style="width:50%" class="column"><figure id="11fbf527-1e74-809e-b82e-df28b3545719" class="image"><a href="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/agm24_post2.jpg"><img style="width:517px" src="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/agm24_post2.jpg"/></a></figure><figure id="11fbf527-1e74-8057-a876-e8a122e6f2b5" class="image"><a href="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/agm24_post3.jpg"><img style="width:517px" src="Design%20Portfolio%2011fbf5271e74801f9401d5086451fb0f/agm24_post3.jpg"/></a></figure></div></div></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
